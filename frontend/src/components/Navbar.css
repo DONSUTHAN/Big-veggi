@@ -1,0 +1,149 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  min-height: 72px;
+  padding: 12px clamp(18px, 4vw, 56px);
+  border-bottom: 1px solid rgba(27, 44, 36, 0.1);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(39, 61, 49, 0.08);
+  animation: slideDown 520ms ease both;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #173b2f;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  color: white;
+  background: #257a4f;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-center a,
+.nav-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #2b3d36;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: transform 160ms ease, color 160ms ease, background 160ms ease, border 160ms ease;
+}
+
+.nav-center a:hover,
+.nav-action:hover,
+.nav-center a.active {
+  color: #17633e;
+  border-color: rgba(37, 122, 79, 0.16);
+  background: #edf8f1;
+  transform: translateY(-1px);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.nav-action {
+  cursor: pointer;
+  background: white;
+}
+
+.register-link {
+  color: white;
+  background: #17633e;
+}
+
+.register-link:hover {
+  color: white;
+  background: #145534;
+}
+
+.user-chip {
+  padding: 8px 11px;
+  border-radius: 999px;
+  color: #6b2b13;
+  background: #fff1df;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tractor-logo {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  color: #17633e;
+  background: #e7f6ed;
+  border: 1px solid rgba(37, 122, 79, 0.18);
+  animation: softPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 122, 79, 0.24);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(37, 122, 79, 0);
+  }
+}
+
+@media (max-width: 860px) {
+  .navbar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .brand,
+  .nav-center,
+  .nav-right {
+    justify-content: center;
+  }
+
+  .nav-center,
+  .nav-right {
+    flex-wrap: wrap;
+  }
+}
